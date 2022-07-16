@@ -24,16 +24,19 @@ export default function Contact() {
           setConfirm("Message sent successfully");
           setColor("green");
           setDisplay("block");
+          setTimeout(() => {
+            setDisplay("none");
+          }, 4000);
         },
         (error) => {
           setConfirm("Mail is not sended.There is some issue");
           setColor("red");
           setDisplay("block");
+          setTimeout(() => {
+            setDisplay("none");
+          }, 4000);
         }
       );
-    setTimeout(() => {
-      setDisplay("none");
-    }, 4000);
   };
 
   return (
