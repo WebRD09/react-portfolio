@@ -1,12 +1,39 @@
 import React from "react";
 import "./contact.css";
-import { useRef } from "react";
+import emailjs from "emailjs-com";
+import { useState } from "react";
 
 export default function Contact() {
-  const formRef = useRef();
+  const [display, setDisplay] = useState("none");
+  const [confirm, setConfirm] = useState("");
+  const [color, setColor] = useState("");
 
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_3f61t0h",
+        "template_bef70jr",
+        e.target,
+        "LiM7X4_wWah2gEuSA"
+      )
+      .then(
+        () => {
+          e.target.reset();
+          setConfirm("Message sent successfully");
+          setColor("green");
+          setDisplay("block");
+        },
+        (error) => {
+          setConfirm("Mail is not sended.There is some issue");
+          setColor("red");
+          setDisplay("block");
+        }
+      );
+    setTimeout(() => {
+      setDisplay("none");
+    }, 4000);
   };
 
   return (
@@ -15,7 +42,7 @@ export default function Contact() {
         <div className="c-bg">Contact Me</div>
       </div>
       <div className="c-right">
-        <form ref={formRef} onSubmit={handleSubmit}>
+        <form onSubmit={sendEmail}>
           <input
             type="text"
             name="fname"
@@ -46,6 +73,12 @@ export default function Contact() {
           ></textarea>
           <button>Send</button>
         </form>
+        <div
+          className="confirm"
+          style={{ display: display, backgroundColor: color }}
+        >
+          {confirm}
+        </div>
       </div>
     </div>
   );
