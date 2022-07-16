@@ -1,0 +1,121 @@
+.c{
+    height: 100vh;
+    display: flex;
+    background-color: rgb(248 245 242);
+}
+
+.c-left{
+    flex: 1;
+    height: 100%;
+}
+
+.c-right{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.c-bg{
+    font-family: 'Poppins';
+    color: white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    background-color: rgb(10 97 102);
+    font-size: 70px;
+    font-weight: bold;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 60%;
+    width: 70%;
+}
+
+input, textarea, button{
+    width: 100%;
+    border: 0.3px solid rgb(10 97 102);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+input:focus, textarea:focus { 
+    outline: none !important;
+    background-color:rgb(10 97 102);
+    color: white;
+}
+
+input{
+    height: 50px;
+}
+
+button{
+    background-color:rgb(10 97 102);
+    color: white;
+    height: 40px;
+    width: 100px !important;
+    cursor: pointer;
+}
+
+input, textarea{
+    box-shadow:0px 4px 20px -5px rgba(175, 133, 133, 0.1);
+}
+
+::placeholder{
+    color: white;
+}
+
+@media screen and (max-width: 1000px) {
+    .c-bg{
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    form{
+        height: 90%;
+    }
+    input{
+        height: 30px;
+    }
+    input, textarea, button{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 625px) {
+    .c-bg{
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .c{
+        flex-direction: column;
+    }
+    .c-left{
+        flex:1;
+        width:100vw;
+    }
+    .c-right{
+        flex:3
+    }
+    .c-bg{
+        clip-path: polygon(20% 0%, 80% 0%, 100% 1%, 100% 80%, 100% 100%, 0 99%, 0% 80%, 0 0);
+    }
+    form{
+        height: 80%;
+    }
+}
