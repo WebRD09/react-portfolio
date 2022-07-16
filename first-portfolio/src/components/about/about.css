@@ -86,7 +86,7 @@
         flex-direction: column;
     }
     .a-bg{
-        clip-path: polygon(20% 0%, 80% 0%, 100% 1%, 100% 80%, 100% 100%, 0 99%, 0% 80%, 0 0);
+        clip-path: inset(0 0 0 0);
     }
     .a-right img{
         height: 250px;
