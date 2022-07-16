@@ -113,7 +113,7 @@ input, textarea{
         flex:3
     }
     .c-bg{
-        clip-path: polygon(20% 0%, 80% 0%, 100% 1%, 100% 80%, 100% 100%, 0 99%, 0% 80%, 0 0);
+        clip-path: inset(0 0 0 0);
     }
     form{
         height: 80%;
